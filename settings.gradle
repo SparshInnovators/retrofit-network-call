@@ -1,0 +1,3 @@
+include ':retrofitnetworkcall'
+include ':app'
+rootProject.name = "RetrofitNetworkCall"
