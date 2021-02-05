@@ -1,4 +1,5 @@
 # retrofit-network-call
+[![](https://jitpack.io/v/SparshInnovators/retrofit-network-call.svg)](https://jitpack.io/#SparshInnovators/retrofit-network-call)
 
 ```
 allprojects {
