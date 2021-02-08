@@ -24,7 +24,7 @@ class RetrofitNetworkCall {
         ) {
             val apiService: ApiInterface =
                 ApiClient.getClient(baseUrl).create(ApiInterface::class.java)
-            var response: Response<String>? = null
+            var response: Response<Any>? = null
 
             if (type.equals("get", ignoreCase = true)) {
 
