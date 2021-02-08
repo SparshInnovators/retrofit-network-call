@@ -35,18 +35,19 @@ class RetrofitNetworkCall {
 
                 if ((headers != null) && (params != null)) {
                     response =
-                        apiService.getWithHeaderRequest(endpoint + "/" + params, headers)
+                        apiService.getWithHeaderRequest(endpoint + "?" + params, headers)
                 }
                 if ((headers != null) && (params == null)) {
                     response = apiService.getWithHeaderRequest(endpoint, headers)
                 }
                 if ((headers == null) && (params != null)) {
-                    response = apiService.getRequest(endpoint + "/" + params)
+                    response = apiService.getRequest(endpoint + "?" + params)
                 }
                 if ((headers == null) && (params == null)) {
                     response = apiService.getRequest(endpoint)
                 }
             }
+
             if (type.equals("post", ignoreCase = true)) {
 
                 if ((headers != null) && (params != null)) {

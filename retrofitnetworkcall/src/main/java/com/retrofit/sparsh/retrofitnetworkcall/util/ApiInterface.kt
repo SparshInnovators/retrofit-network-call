@@ -29,22 +29,33 @@ interface ApiInterface {
     @POST
     suspend fun postWithHeaderRequest(
         @Url url: String,
-        @HeaderMap headers: Map<String, String>?
+        @FieldMap headers: Map<String, String>?
     ): retrofit2.Response<Any>
 
     @POST
     suspend fun postWithParamsRequest(
         @Url url: String,
-        @Body params: Map<String, String>?
+        @FieldMap params: Map<String, String>?
     ): retrofit2.Response<Any>
 
     @POST
     suspend fun postWithHeaderAndParamsRequest(
         @Url url: String,
         @HeaderMap headers: Map<String, String>?,
-        @Body params: Map<String, String>?
+        @FieldMap params: Map<String, String>?
     ): retrofit2.Response<Any>
 
     /*POST requests ends*/
+
+
+    /*PUT requests starts*/
+    @PUT
+    suspend fun putWithHeaderAndParamsRequest(
+        @Url url: String,
+        @HeaderMap headers: Map<String, String>?,
+        @Body params: Map<String, String>?
+    ): retrofit2.Response<Any>
+
+    /*PUT requests ends*/
 
 }
