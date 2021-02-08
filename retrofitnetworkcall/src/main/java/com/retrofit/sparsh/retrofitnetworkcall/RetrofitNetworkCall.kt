@@ -14,16 +14,21 @@ class RetrofitNetworkCall {
     companion object {
         var errorCode = "201"
 
+        suspend fun getApiService(baseUrl: String): ApiInterface {
+            val apiService: ApiInterface =
+                ApiClient.getClient(baseUrl).create(ApiInterface::class.java)
+            return apiService
+        }
+
         suspend fun initNetworkCall(
-            baseUrl: String,
+            apiService: ApiInterface,
             endpoint: String,
             headers: HashMap<String, String>?,
             params: HashMap<String, String>?,
             observable: MutableLiveData<Any>,
             type: String
         ) {
-            val apiService: ApiInterface =
-                ApiClient.getClient(baseUrl).create(ApiInterface::class.java)
+
             var response: Response<Any>? = null
 
             if (type.equals("get", ignoreCase = true)) {
