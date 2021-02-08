@@ -19,7 +19,7 @@ class RetrofitNetworkCall {
             endpoint: String,
             headers: HashMap<String, String>?,
             params: HashMap<String, String>?,
-            observable: MutableLiveData<String>,
+            observable: MutableLiveData<Any>,
             type: String
         ) {
             val apiService: ApiInterface =
@@ -57,7 +57,6 @@ class RetrofitNetworkCall {
                     response = apiService.postRequest(endpoint)
                 }
             }
-
 
             if (response!!.isSuccessful) {
                 observable!!.postValue(response.body())

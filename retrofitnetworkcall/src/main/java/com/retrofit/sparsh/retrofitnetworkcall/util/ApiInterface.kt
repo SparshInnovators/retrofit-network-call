@@ -9,13 +9,13 @@ interface ApiInterface {
     @GET
     suspend fun getRequest(
         @Url url: String,
-    ): retrofit2.Response<String>
+    ): retrofit2.Response<Any>
 
     @GET
     suspend fun getWithHeaderRequest(
         @Url url: String,
         @HeaderMap headers: Map<String, String>?,
-    ): retrofit2.Response<String>
+    ): retrofit2.Response<Any>
 
     /*GET requests ends*/
 
@@ -24,26 +24,26 @@ interface ApiInterface {
     @POST
     suspend fun postRequest(
         @Url url: String,
-    ): retrofit2.Response<String>
+    ): retrofit2.Response<Any>
 
     @POST
     suspend fun postWithHeaderRequest(
         @Url url: String,
         @HeaderMap headers: Map<String, String>?
-    ): retrofit2.Response<String>
+    ): retrofit2.Response<Any>
 
     @POST
     suspend fun postWithParamsRequest(
         @Url url: String,
         @Body params: Map<String, String>?
-    ): retrofit2.Response<String>
+    ): retrofit2.Response<Any>
 
     @POST
     suspend fun postWithHeaderAndParamsRequest(
         @Url url: String,
         @HeaderMap headers: Map<String, String>?,
         @Body params: Map<String, String>?
-    ): retrofit2.Response<String>
+    ): retrofit2.Response<Any>
 
     /*POST requests ends*/
 
